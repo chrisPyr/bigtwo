@@ -15,7 +15,7 @@ void *recvdata(void *) {
     char recvmsg[255] = {};
     if (recv(sockfd, recvmsg, sizeof(recvmsg), 0) <= 0)
       pthread_exit(NULL);
-    cout << recvmsg << "9999\n";
+    cout << recvmsg << "\n";
   }
 }
 
@@ -46,7 +46,6 @@ int main(int arc, char *argv[]) {
   char recvmessage[100] = {};
   while (message != "end") {
     // char recvmsg[255] = {};
-    cout << "fff\n";
     if (send(sockfd, message, sizeof(message), 0) < 0)
       break;
     // recv(sockfd, recvmsg, sizeof(recvmsg), 0);
